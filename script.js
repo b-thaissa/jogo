@@ -21,5 +21,16 @@ document.addEventListener('keydown', (event)=>{
             if (posX > 0)
                 posX = posX-moveSpeed;
             break;
+        case 'ArrowRight':
+            if (posX < window.innerWidth - circle.offsetWidth)
+                posX = posX + moveSpeed;
+            break;
+        
     }
-})
+    updateCirclePosition();
+});
+
+function updateCirclePosition() {
+    circle.style.left = `${posX}px`;
+    circle.style.top = `${posY}px`;
+}
