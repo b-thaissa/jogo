@@ -1,5 +1,5 @@
-const circle = document.getElementById("circle");
-const gameArea = document.getElementById("gameArea");
+const circle = document.getElementById('circle');
+const gameArea = document.getElementById('gameArea');
 
 let posX = 50;
 let posY = 50;
@@ -10,20 +10,16 @@ const originalBackgroundColor = '#f8b71d';
 document.addEventListener('keydown', (event)=>{
     switch(event.code){
         case 'ArrowUp':
-        if (posX > 0) 
-            posY = posY - moveSpeed;
+        if (posX > 0) posY -= moveSpeed;
             break;
         case 'ArrowDown':
-            if (posY < window.innerHeight - circle.offsetHeight)
-                posY = posY + moveSpeed;
+            if (posY < window.innerHeight - circle.offsetHeight) posY += moveSpeed;
             break;
         case 'ArrowLeft':
-            if (posX > 0)
-                posX = posX-moveSpeed;
+            if (posX > 0) posX -= moveSpeed;
             break;
         case 'ArrowRight':
-            if (posX < window.innerWidth - circle.offsetWidth)
-                posX = posX + moveSpeed;
+            if (posX < window.innerWidth - circle.offsetWidth) posX += moveSpeed;
             break;
         
     }
@@ -39,7 +35,7 @@ function createSquares(){
     clearShapes();
     gameArea.style.backgroundColor = 'red';
 
-    for(let i =0; i<4; i++){
+    for(let i =0; i<4; i++) {
        const square = document.createElement('div');
        square.classList.add('square');
        square.style.left = `${Math.random() * (window.innerWidth - 50)}px`;
